@@ -6,7 +6,7 @@ import * as queries from "@/queries";
 import { notFound } from "next/navigation";
 
 const HomePage = async () => {
-  const properties = await queries.getFeaturedProperties();
+  const properties = await queries.getRecentProperties();
 
   if (!properties) {
     return notFound();

@@ -13,11 +13,10 @@ interface HomePropertiesListProps {
 const HomePropertiesList = ({ properties }: Readonly<HomePropertiesListProps>) => {
   const [selectedRate, setSelectedRate] = useState("monthly");
 
-  const renderedProperties = properties
-    .filter((property) => property.is_featured === true)
-    .map((property) => {
-      return <PropertyCard key={property.id.toString()} property={property} selectedRate={selectedRate} setSelectedRate={setSelectedRate} />;
-    });
+  const renderedProperties = properties.map((property) => {
+    console.log("hi there");
+    return <PropertyCard key={property.id.toString()} property={property} selectedRate={selectedRate} setSelectedRate={setSelectedRate} />;
+  });
 
   return (
     <>

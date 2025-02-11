@@ -11,6 +11,10 @@ export async function getFeaturedProperties(): Promise<Property[] | null> {
   return prisma.property.findMany({ where: { is_featured: true } });
 }
 
+export async function getRecentProperties() {
+  return prisma.property.findMany({ orderBy: { updatedAt: "desc" }, take: 3 });
+}
+
 export async function getAllProperties(skip?: number, take?: number) {
   skip = skip ?? 0;
   take = take ?? 3;
