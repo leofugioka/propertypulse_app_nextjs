@@ -1,1 +1,1 @@
-export const privateRoutes = ["/properties/add", "/properties/saved", "/profile"];
+export const privateRoutes = ["/properties/add", "/properties/saved", "/profile", "/messages"];

@@ -23,7 +23,7 @@ export default auth(async (req) => {
     const errorUrl = new URL("/error", nextUrl.origin);
     errorUrl.searchParams.set("message", "You must be signed in");
     errorUrl.searchParams.set("status", "401");
-    return Response.redirect(errorUrl);
+    return Response.redirect(`${nextUrl.origin}/`);
   }
 });
 
